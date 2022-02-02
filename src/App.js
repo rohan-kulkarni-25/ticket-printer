@@ -1,4 +1,3 @@
-import fileDownload from "js-file-download";
 import React, { useState } from "react";
 import './App.css'
 import Loading from './loading.png'
@@ -27,7 +26,6 @@ export default function AddYourData() {
         'Access-Control-Allow-Headers': '*'
       }
     })
-    console.log(response);
     setImg(response.data.data)
     setload(0)
   };
