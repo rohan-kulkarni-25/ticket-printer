@@ -2,6 +2,7 @@ import fileDownload from "js-file-download";
 import React, { useState } from "react";
 import './App.css'
 import Loading from './loading.png'
+import { saveAs } from 'file-saver'
 const axios = require('axios')
 
 
@@ -29,6 +30,13 @@ export default function AddYourData() {
     console.log(response);
     setImg(response.data.data)
     setload(0)
+  };
+
+  const saveFile = () => {
+    saveAs(
+      img,
+      "workshop-ticket.png"
+    );
   };
 
   return (
@@ -68,9 +76,7 @@ export default function AddYourData() {
       <img src={Loading} className={load ? 'load' : 'hide'} alt='loader' />
       <div className={img ? 'imagesection' : 'hide'}>
         <img src={img} alt=""></img>
-        <button className='dt' onClick={() => {
-          fileDownload(img, 'workshop-ticket.jpg')
-        }}>DOWNLOAD TICKET</button>
+        <button className='dt' onClick={saveFile} target='_blank' rel='noreferrer'>DOWNLOAD TICKET</button>
       </div>
       <p>This site is under development it might crash please report at rohank2502@gmail.com</p>
     </section >
