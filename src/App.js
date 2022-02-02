@@ -16,7 +16,7 @@ export default function AddYourData() {
     setload(1)
     const response = await axios({
       method: 'post',
-      url: '/print',
+      url: 'https://workshop-ticket-printer.herokuapp.com/print',
       data: {
         name,
         email
