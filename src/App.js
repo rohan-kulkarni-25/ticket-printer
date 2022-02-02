@@ -2,14 +2,15 @@ import fileDownload from "js-file-download";
 import React, { useState } from "react";
 import './App.css'
 import Loading from './loading.png'
-
 const axios = require('axios')
+
 
 export default function AddYourData() {
   const [name, setName] = useState(null);
   const [email, setEmail] = useState(null);
   const [img, setImg] = useState(null);
   const [load, setload] = useState(0);
+
 
   const handleSubmit = async (event) => {
     setload(1)
@@ -22,10 +23,10 @@ export default function AddYourData() {
       },
       headers: {
         'Access-Control-Allow-Orign': '*',
-        'Vary': 'Origin'
+        'Access-Control-Allow-Headers': '*'
       }
     })
-
+    console.log(response);
     setImg(response.data.data)
     setload(0)
   };

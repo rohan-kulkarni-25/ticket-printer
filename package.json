@@ -7,7 +7,11 @@
     "@testing-library/react": "^12.1.2",
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.25.0",
+    "fs": "^0.0.1-security",
+    "http-proxy-middleware": "^2.0.2",
+    "jimp": "^0.16.1",
     "js-file-download": "^0.4.12",
+    "node": "^17.4.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
@@ -25,7 +29,6 @@
       "react-app/jest"
     ]
   },
-  "proxy": "https://workshop-ticket-printer.herokuapp.com",
   "browserslist": {
     "production": [
       ">0.2%",
@@ -37,5 +40,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "proxy": "https://workshop-ticket-printer.herokuapp.com"
 }
